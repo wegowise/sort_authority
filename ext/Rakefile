@@ -1,0 +1,8 @@
+require 'ffi-compiler/compile_task'
+
+FFI::Compiler::CompileTask.new('strnatcmp') do |c|
+  c.have_header?('ctype.h', '/usr/include')
+  c.have_header?('string.h', '/usr/include')
+  c.have_header?('assert.h', '/usr/include')
+  c.have_header?('stdio.h', '/usr/include')
+end
