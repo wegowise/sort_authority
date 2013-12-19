@@ -1,6 +1,12 @@
 require 'test_helper'
 
 describe Enumerable do
+  it 'raises an exception for nil values' do
+    assert_raises(SortAuthority::StringExpected) do
+      [nil, 'a'].natural_sort
+    end
+  end
+
   it 'natural sorts' do
     assert_equal ['9m', '10m'], ['10m', '9m'].natural_sort
   end
